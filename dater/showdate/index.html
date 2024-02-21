@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App 1</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}! You are logged in.</p>
+        <a href="{% url 'simple-sso-logout' %}">Logout</a>
+    {% else %}
+        <p>You are not logged in. <a href="{% url 'simple-sso-login' %}?next={% url 'protected_view' %}">Log in</a>.</p>
+    {% endif %}
+    <a href="{% url 'protected_view' %}">Go to Protected View</a>
+</body>
+</html>
