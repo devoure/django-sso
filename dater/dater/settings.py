@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,8 +42,17 @@ INSTALLED_APPS = [
     "showdate.apps.ShowdateConfig"
 ]
 
+KEYCLOAK_REALM = 'Testrealm'
+KEYCLOAK_AUTHORIZATION_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/auth/protocol/openid-connect/auth'
+KEYCLOAK_TOKEN_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/token'
+KEYCLOAK_USERINFO_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/userinfo'
+KEYCLOAK_LOGOUT_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/logout'
+# KEYCLOAK_PUBLIC_KEY = 'your-keycloak-public-key'
+KEYCLOAK_CLIENT_ID = 'dater'
+KEYCLOAK_CLIENT_SECRET = 'RA2lryW5bYikuo2oSmTXXuQJ7XpSuG08'
+
 AUTHENTICATION_BACKENDS = (
-   'simple_sso.backends.SimpleSSOServerUserBackend',
+   'keycloak_oidc.backends.OpenIDConnectBackend',
    'django.contrib.auth.backends.ModelBackend',
 )
 

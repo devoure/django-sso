@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SSO_REDIRECT_URL = '/dater/service1/'
+LOGIN_REDIRECT_URL = '/dater/service1/'
 
 # Application definition
 
@@ -38,8 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    #"simple_sso.sso_server",
-    "simple_sso"
+    "simple_sso.sso_server",
 ]
 
 MIDDLEWARE = [
@@ -69,10 +70,10 @@ TEMPLATES = [
         },
     },
 ]
-AUTHENTICATION_BACKENDS = [
-    'simple_sso.backends.SimpleSSOServerUserBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
+#AUTHENTICATION_BACKENDS = [
+ #   'simple_sso.backends.SimpleSSOServerUserBackend',
+ #   'django.contrib.auth.backends.ModelBackend',
+#]
 WSGI_APPLICATION = "sso_server.wsgi.application"
 
 

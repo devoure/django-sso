@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from simple_sso.sso_client.client import Client
 from django.conf import settings
-from django.contrib.auth.views import LoginView
+from .views import login_view, logout_view, callback_view
 
 
 test_client = Client(settings.SSO_SERVER,
@@ -25,10 +25,9 @@ test_client = Client(settings.SSO_SERVER,
                      settings.SSO_PRIVATE_KEY)
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("dater/", include(test_client.get_urls())),
-    path("dater/service1/", include('showdate.urls')),
-
-    path("login/", LoginView.as_view(template_name='admin/login.html'), name="login"),
-    path("logout/", LoginView.as_view(template_name='admin/logout.html'), name="logout")
+    path("dater/", include('showdate.urls')),
+    path("accounts/login/", login_view, name="login"),
+    path("accounts/logout/", logout_view, name="logout"),
+    path("accounts/callback/", callback_view, name="callback")
 ]
 

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greetings</title>
+</head>
+<body>
+    <h1>Greeting: Service 2</h1>
+    
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}!</p>
+        <p> Good morning !! </p>
+    {% else %}
+        <p>You are not logged in. <a href="{% url 'simple-sso-login' %}">Login</a>.</p>
+    {% endif %}
+</body>
+</html>

@@ -22,7 +22,7 @@ from django.contrib.auth.views import LoginView
 test_server = Server()
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("masterkey/", include(test_server.get_urls()))
-    # path("login/", LoginView.as_view(template_name='admin/login.html'), name="login")
+    path("masterkey/", include(test_server.get_urls())),
+    path("login/", LoginView.as_view(template_name='admin/login.html'), name="login")
 ]
 

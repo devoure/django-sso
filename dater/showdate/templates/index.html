@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Application</title>
+    <title>Dater</title>
 </head>
 <body>
-    <h1>Dater: Service 2</h1>
+    <h1>Dater: Service 1</h1>
     
     {% if user.is_authenticated %}
         <p>Hello, {{ user.username }}!</p>
-        <a href="{% url 'logout' %}">Logout</a>
+        <p> Todays Date: 2024-02-22 </p>
+        <a href="{% url 'logout' %}">Logout</a>.
     {% else %}
         <p>You are not logged in. <a href="{% url 'login' %}">Login</a>.</p>
     {% endif %}
