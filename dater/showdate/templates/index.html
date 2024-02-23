@@ -6,13 +6,8 @@
 </head>
 <body>
     <h1>Dater: Service 1</h1>
-    
-    {% if user.is_authenticated %}
-        <p>Hello, {{ user.username }}!</p>
-        <p> Todays Date: 2024-02-22 </p>
-        <a href="{% url 'logout' %}">Logout</a>.
-    {% else %}
-        <p>You are not logged in. <a href="{% url 'login' %}">Login</a>.</p>
-    {% endif %}
+    <p>Hello, {{ username }}!</p>
+    <p> Todays Date: 2024-02-22 </p>
+    <a href="{% url 'logout' %}">Logout</a>.
 </body>
 </html>

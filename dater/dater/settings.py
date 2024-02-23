@@ -47,6 +47,7 @@ KEYCLOAK_AUTHORIZATION_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/auth/p
 KEYCLOAK_TOKEN_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/token'
 KEYCLOAK_USERINFO_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/userinfo'
 KEYCLOAK_LOGOUT_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/logout'
+KEYCLOAK_INSPECT_URL = "http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/token/introspect"
 # KEYCLOAK_PUBLIC_KEY = 'your-keycloak-public-key'
 KEYCLOAK_CLIENT_ID = 'dater'
 KEYCLOAK_CLIENT_SECRET = 'RA2lryW5bYikuo2oSmTXXuQJ7XpSuG08'
