@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from simple_sso.sso_client.client import Client
 from django.conf import settings
+from .views import login_view, logout_view, callback_view
 
 test_client = Client(settings.SSO_SERVER,
                      settings.SSO_PUBLIC_KEY,
                      settings.SSO_PRIVATE_KEY)
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("hello/", include(test_client.get_urls())),
-    path("", include('helloworld.urls'))
+    path("hello/", include('helloworld.urls')),
+    path("accounts/login/", login_view, name="login"),
+    path("accounts/logout/", logout_view, name="logout"),
+    path("accounts/callback/", callback_view, name="callback")
 ]

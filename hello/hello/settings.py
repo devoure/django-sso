@@ -54,6 +54,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "hello.urls"
 
+KEYCLOAK_REALM = 'Testrealm'
+KEYCLOAK_AUTHORIZATION_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/auth/protocol/openid-connect/auth'
+KEYCLOAK_TOKEN_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/token'
+KEYCLOAK_USERINFO_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/userinfo'
+KEYCLOAK_LOGOUT_URL = 'http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/logout'
+# KEYCLOAK_PUBLIC_KEY = 'your-keycloak-public-key'
+KEYCLOAK_CLIENT_ID = 'hello'
+KEYCLOAK_CLIENT_SECRET = 'qBHzROo4DMO28LkCSbfpgm3lZ5rPR9bG'
+KEYCLOAK_INSPECT_URL = "http://127.0.0.1:8080/auth/realms/testrealm/protocol/openid-connect/token/introspect"
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
