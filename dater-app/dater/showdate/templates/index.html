@@ -1,13 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dater</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Dater: Service 1</h1>
-    <p>Hello, {{ username }}!</p>
-    <p> Todays Date: 2024-02-22 </p>
-    <a href="{% url 'logout' %}">Logout</a>.
+	{% block content %}
+	{% endblock %}
 </body>
 </html>

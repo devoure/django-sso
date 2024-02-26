@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Greetings</title>
+    <title>Hello</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Greeting: Service 2</h1> 
-    <p>Hello, {{ username }}!</p>
-    <p> Good morning !! </p>
+	{% block content %}
+	{% endblock %}
 </body>
 </html>

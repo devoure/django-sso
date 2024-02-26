@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block title %} Service 2 {% endblock %}
+
+{% block content %}
+<div class="hello">
+	<div class="logo">
+		<img src="{% static 'img/greet.jpg' %}" />
+	</div>
+
+	<div class="title">
+		<h1>Hello App</h1>
+	</div>
+
+	<div class="content">
+		<img src="{% static 'img/evening.jpg' %}" />
+
+	</div>
+
+	<div class="time">
+		<div class='eve-text'>
+			<div>
+				<img src="{% static 'img/wave.jpg' %}" />
+			</div>
+			<p><span style="font-weight:bold; font-size:16px">Good Evening</span>, {{ username }}!</p>
+
+	</div>
+
+</div>
+{% endblock %}

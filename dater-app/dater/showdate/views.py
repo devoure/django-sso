@@ -22,7 +22,7 @@ def index(request):
         decoded_token = jwt.decode(token, options={"verify_signature": False})
         if decoded_token:
             username = decoded_token['preferred_username']
-            return render(request, 'index.html', {'username': username})
+            return render(request, 'dater.html', {'username': username})
 
     return HttpResponseRedirect(reverse('login'))
 
